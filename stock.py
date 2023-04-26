@@ -265,12 +265,12 @@ hidden_dim = 256
 layer_dim = 4
 batch_size = 64
 dropout = 0.4
-n_epochs = 100
+n_epochs = 50
 learning_rate = 1e-3
 weight_decay = 1e-6
 
 
-model = LSTMModel(input_dim, hidden_dim, layer_dim, output_dim, dropout)
+model = GRUModel(input_dim, hidden_dim, layer_dim, output_dim, dropout)
 
 loss_fn = nn.MSELoss(reduction="mean")
 optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=weight_decay)
